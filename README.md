@@ -273,6 +273,11 @@ O objetivo deste projeto foi praticar o desenvolvimento de uma aplicação web u
 * Operações CRUD;
 * Integração entre frontend, backend e banco de dados.
 
+
+## Versão anterior ##
+
+[controle-financeiro-gui](https://github.com/juandeoliveira147-sys/controle-financeiro-python_com_Excel)
+
 ## Evolução do projeto
 
 Este projeto representa a evolução de uma versão anterior do Controle Financeiro desenvolvida para o terminal.

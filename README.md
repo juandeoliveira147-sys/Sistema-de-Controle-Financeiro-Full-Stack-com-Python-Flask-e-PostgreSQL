@@ -11,14 +11,12 @@ Este projeto é uma evolução de uma versão anterior do Controle Financeiro de
 ### Tela inicial
 
 
-> **<img width="1037" height="482" alt="Captura de tela 2026-09-01 124049" src="https://github.com/user-attachments/assets/0665955a-2fe8-4c9e-83de-a962e34550b2" />
-**
+> <img width="1037" height="482" alt="Captura de tela 2026-09-01 124049" src="https://github.com/user-attachments/assets/0665955a-2fe8-4c9e-83de-a962e34550b2" />
 
 ### Extrato financeiro
 
 
-> **<img width="1016" height="465" alt="Captura de tela 2026-09-01 124118" src="https://github.com/user-attachments/assets/cbc6db7b-acc9-48d1-ac6e-0dfad59a62d3" />
-**
+> <img width="1016" height="465" alt="Captura de tela 2026-09-01 124118" src="https://github.com/user-attachments/assets/cbc6db7b-acc9-48d1-ac6e-0dfad59a62d3" />
 
 ## Funcionalidades
 

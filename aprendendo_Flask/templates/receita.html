@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Adicionar receita</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}">
+</head>
+<body>
+    <h1>Quanto deseja adicionar a receita?</h1>
+    <p>Selecione um numero para a receita</p>
+    <form method="POST" action="/salvar_receita">
+    
+    <label for="receita" class="texto_receita">Receita:</label>
+    <!--um campo para colocar o numero do input da receita-->
+    <input type="text" id="receita" name="receita" class="campo_receita" inputmode="numeric" placeholder="R$ 0,00">
+    <!--descrição-->
+    <label for="descricao">Descrição:</label>
+    <input type="text" id="descricao" name="descricao" class="descricao_receita"  placeholder="Insira uma descrição">
+    <br><br>
+    <button type="submit" class="botao_receita">Adicionar Receita</button>
+    </form>
+    <script>
+        const campomoeda = document.getElementById('receita');
+        campomoeda.addEventListener('input', function (e){
+
+            //lembrete: isso remove o que não for digito numerico
+            let valor = e .target.value.replace(/\D/g,"");
+
+            // esse aqui transforma o numero em numero com centavos
+            valor = (valor/100).toFixed(2);
+
+            //transforma em moeda
+            if (valor === "0.00"){
+                e.target.value = "";
+            }else {
+                e.target.value = new Intl.NumberFormat('pt-BR',{
+                    style:"currency",
+                    currency: 'BRL' 
+                }).format(valor);
+            }
+        })
+    </script>

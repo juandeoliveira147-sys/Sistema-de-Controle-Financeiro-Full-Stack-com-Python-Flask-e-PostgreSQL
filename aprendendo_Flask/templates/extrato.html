@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Extrato Financeiro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}">
+    <style>
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        .receita { color: green; }
+        .despesa { color: red; }
+    </style>
+</head>
+<body>
+
+    <h1>Meu Extrato Financeiro</h1>
+    <div class="saldo-container">
+        Saldo Atual: 
+        <span class="{{ 'positivo' if saldo >= 0 else 'negativo' }}">
+            R$ {{ "%.2f"|format(saldo) }}
+        </span>
+    </div>
+    {% if transacoes %}
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descrição</th>
+                <th>Tipo</th>
+                <th>Valor</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for transacao in transacoes %}
+            <tr>
+                <td>{{ transacao[0] }}</td>
+                <td>{{ transacao[4] }}</td>
+                
+                {# Aplica uma cor diferente dependendo do tipo #}
+                <td class="{{ 'receita' if transacao[1] == 'receita' else 'despesa' }}">
+                    {{ transacao[1].upper() }}
+                </td>
+                
+                <td>R$ {{ "%.2f"|format(transacao[2]) }}</td>
+                <td>{{ transacao[3].strftime('%H:%M %d/%m/%Y') }}</td>
+                
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+
+    {# 2. Se a lista estiver vazia, exibe esta mensagem na tela #}
+    <div style="text-align: center; margin-top: 40px; color: #666;">
+        <p>⚠️ <strong>Nenhuma transação encontrada.</strong></p>
+        <p>O seu histórico financeiro está vazio no momento.</p>
+    </div>
+
+{% endif %}
+
+</body>
+</html>

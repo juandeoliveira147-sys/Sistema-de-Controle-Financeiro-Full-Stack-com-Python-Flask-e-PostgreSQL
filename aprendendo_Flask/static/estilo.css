@@ -1,0 +1,194 @@
+body {
+    background-color:#e6eaea;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+h1 {
+    color :#333
+
+}
+
+p {
+
+color: #666;
+    
+}
+
+.botao-receita {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: green;
+    background-color: #e6eaea;
+    margin: 10px;
+    cursor: pointer
+
+
+}
+.botao-despesa {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: red;
+    background-color: #e6eaea;
+    margin: 10px;
+    cursor: pointer
+
+
+}
+.botao-extrato {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: #e6eaea;
+    margin: 10px;
+    cursor: pointer
+
+
+}
+.botao-alteracoes {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    margin: 10px;
+    cursor: pointer
+
+
+}
+
+.botao-excluir_movimentacao {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    margin: 10px;
+    cursor: pointer
+
+
+}
+
+.texto_receita {
+    color:green
+}
+
+.texto-despesa {
+    color:rgb(255, 0, 0)
+}
+
+.texto_alteracoes {
+    color: black;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input_alteracoes {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.botao_da_alteracao {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.input_excluir{
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.botao_da_exclusao{
+
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f80404;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.positivo {
+    color: green;
+    font-weight: bold
+}
+
+.negativo {
+    color: red;
+    font-weight: bold
+}
+
+.campo_receita {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.campo_despesa {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.descricao_receita {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.descricao_despesa {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+.botao_receita {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.botao_despesa {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f80404;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}

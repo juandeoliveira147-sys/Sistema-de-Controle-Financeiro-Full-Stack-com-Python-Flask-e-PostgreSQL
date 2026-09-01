@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}">
+    <title>Alterações de movimentações</title>
+</head>
+<body>
+    <h1 class="texto_alteracoes">Alterações de movimentações</h1>
+    <p>Digite um ID para alterar uma movimentação:</p>
+    <form action="/salvar_alteracoes" method="POST">
+
+
+    <label for="id" class="texto_alteracoes">ID:</label>
+    <input type="number" name="id" id="id" class="input_alteracoes" placeholder="ID da movimentação" required>
+
+    <label for="novo_valor" class="texto_alteracoes">Novo valor:</label>
+    <input type="text" name="novo_valor" id="novo_valor" class="input_alteracoes" inputmode="numeric" placeholder="R$ 0,00" required>
+    <br><br>
+    <label for="nova_descricao" class="texto_alteracoes">Nova descrição:</label>
+    <input type="text" name="nova_descricao" class="input_alteracoes" placeholder="Nova descrição" required>
+    <label for="novo_tipo" class="texto_alteracoes">Novo tipo:</label>
+    <select name="novo_tipo" class="input_alteracoes" required>
+        <option value="receita">Receita</option>
+        <option value="despesa">Despesa</option>
+    </select>
+    <script>
+        const campomoeda = document.getElementById('novo_valor');
+        campomoeda.addEventListener('input', function (e){
+
+            //lembrete: isso remove o que não for digito numerico
+            let valor = e .target.value.replace(/\D/g,"");
+
+            // esse aqui transforma o numero em numero com centavos
+            valor = (valor/100).toFixed(2);
+
+            //transforma em moeda
+            if (valor === "0.00"){
+                e.target.value = "";
+            }else {
+                e.target.value = new Intl.NumberFormat('pt-BR',{
+                    style:"currency",
+                    currency: 'BRL' 
+                }).format(valor);
+            }
+        })
+    </script>
+    <br><br>
+    <button type="submit" class="botao_da_alteracao">Alterar</button>
+    </form>
+</body>

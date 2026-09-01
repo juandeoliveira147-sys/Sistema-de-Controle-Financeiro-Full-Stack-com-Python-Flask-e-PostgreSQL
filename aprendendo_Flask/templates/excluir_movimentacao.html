@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}">
+    <title>Alterações de movimentações</title>
+</head>
+<body>
+    <h1 class="texto_alteracoes">Excluir Movimentação</h1>
+    <p>Digite um ID para excluir uma movimentação:</p>
+    <form action="/excluir_movimentacao" method="POST">
+
+
+    <label for="id" class="texto_excluir">ID:</label>
+    <input type="number" name="excluir_id" id="excluir_id" class="input_excluir" placeholder="ID da movimentação" required>
+    <br><br>
+    <button type="submit" class="botao_da_exclusao">Excluir</button>
+</form>
+</body>
+

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <title>Controle Financeiro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='estilo.css')}}">
+</head>
+<body>
+
+    <h1>Bem vindo ao controle financeiro</h1>
+    <p>Selecione a opção que deseja</p>
+    <button class="botao-receita" onclick="window.location.href='receita'">Adicionar Receita</button>
+<button class="botao-despesa" onclick="window.location.href='despesa'">
+  Adicionar Despesa
+</button>
+<br>
+<button class="botao-extrato" onclick="window.location.href='extrato'">
+Extrato  
+</button>
+<button class="botao-alteracoes" onclick="window.location.href='alteracoes'">
+  Alterar movimentação
+</button>
+<button class="botao-excluir_movimentacao" onclick="window.location.href='excluir'">Excluir movimentação</button>
+
+</body>
+</html>

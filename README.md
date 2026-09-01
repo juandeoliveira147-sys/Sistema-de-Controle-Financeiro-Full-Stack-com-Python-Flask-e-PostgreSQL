@@ -224,20 +224,21 @@ Instale o driver do PostgreSQL:
 pip install psycopg2
 ```
 
-Configure o banco de dados
+### Configure o banco de dados
 
-Crie um banco de dados chamado controlefinanceiro no PostgreSQL. Em seguida, conecte-se a esse banco e execute o comando SQL de criação da tabela apresentado na seção Banco de dados.
+Crie um banco de dados chamado `controlefinanceiro` no PostgreSQL. Em seguida, conecte-se a esse banco e execute o comando SQL de criação da tabela apresentado na seção [Banco de dados](#banco-de-dados).
 
-Depois, abra o arquivo banco_de_dados.py e configure os dados de acesso:
+Depois, abra o arquivo `banco_de_dados.py` e configure os dados de acesso:
 
-Usuário;
-Senha;
-Host;
-Porta;
-Nome do banco de dados.
+* Usuário;
+* Senha;
+* Host;
+* Porta;
+* Nome do banco de dados.
 
 Exemplo:
 
+```python
 conect = pg.connect(
     user="postgres",
     password="sua_senha_aqui",
@@ -245,8 +246,9 @@ conect = pg.connect(
     port="5432",
     database="controlefinanceiro"
 )
+```
 
-Substitua sua_senha_aqui pela senha definida no seu ambiente PostgreSQL.
+Substitua `sua_senha_aqui` pela senha definida no seu ambiente PostgreSQL.
 
 ### Execute a aplicação
 

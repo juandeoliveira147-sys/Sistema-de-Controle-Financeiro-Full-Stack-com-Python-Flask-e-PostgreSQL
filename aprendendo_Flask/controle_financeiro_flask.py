@@ -118,7 +118,8 @@ def salvar_alteracoes():
     if alteracao_descricao:
         conexao = conectar()
         cursor = conexao.cursor()
-        cursor.execute(f"UPDATE controlefinanceiro SET descricao='{alteracao_descricao}' WHERE id={id_recebido}")
+        query = "UPDATE controlefinanceiro SET descricao=%s WHERE id=%s"
+        cursor.execute(query, (alteracao_descricao, id_recebido))
         conexao.commit()
         encerrar_conexao(conexao)
     if alteracao_valor:
@@ -126,13 +127,15 @@ def salvar_alteracoes():
         numeros = float(converter) / 100
         conexao = conectar()
         cursor = conexao.cursor()
-        cursor.execute(f"UPDATE controlefinanceiro SET valor='{numeros}' WHERE id={id_recebido}")
+        query = "UPDATE controlefinanceiro SET valor=%s WHERE id=%s"
+        cursor.execute(query, (numeros, id_recebido))
         conexao.commit()
         encerrar_conexao(conexao)
     if alteracao_tipo:
         conexao = conectar()
         cursor = conexao.cursor()
-        cursor.execute(f"UPDATE controlefinanceiro SET tipo='{alteracao_tipo}' WHERE id={id_recebido}")
+        query = "UPDATE controlefinanceiro SET tipo=%s WHERE id=%s"
+        cursor.execute(query, (alteracao_tipo, id_recebido))
         conexao.commit()
         encerrar_conexao(conexao)
 
@@ -147,7 +150,8 @@ def excluir_movimentacao():
     id_recebido = request.form.get('excluir_id')
     conexao = conectar()
     cursor = conexao.cursor()
-    cursor.execute(f"select * FROM controlefinanceiro WHERE id={id_recebido}")
+    query = "SELECT * FROM controlefinanceiro WHERE id=%s"
+    cursor.execute(query, (id_recebido,))
     temid = cursor.fetchall()
     conexao.commit()
     encerrar_conexao(conexao)

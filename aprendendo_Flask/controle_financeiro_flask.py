@@ -33,7 +33,8 @@ def salvar_receita():
         conexao = conectar()
         cursor = conexao.cursor()
         agora = datetime.datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
-        cursor.execute(f"INSERT INTO controlefinanceiro(tipo,valor,horario,descricao) values ('receita','{numeros}','{agora}','{descricao}');")
+        query = "INSERT INTO controlefinanceiro(tipo,valor,horario,descricao) values ('receita',%s,%s,%s)"
+        cursor.execute(query, (numeros, agora, descricao))
         conexao.commit()
         encerrar_conexao(conexao)
         
@@ -58,7 +59,8 @@ def salvar_despesa():
         conexao = conectar()
         cursor = conexao.cursor()
         agora = datetime.datetime.now().strftime("%d/%m/%Y  %H:%M:%S")
-        cursor.execute(f"INSERT INTO controlefinanceiro(tipo,valor,horario,descricao) values ('despesa','{numeros}','{agora}','{descricao}');")
+        query = "INSERT INTO controlefinanceiro(tipo,valor,horario,descricao) values ('despesa',%s,%s,%s)"
+        cursor.execute(query, (numeros, agora, descricao))
         conexao.commit()
         encerrar_conexao(conexao)
         
